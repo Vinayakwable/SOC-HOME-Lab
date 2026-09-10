@@ -1,83 +1,160 @@
-# SOC-HOME-Lab
-SOC Home Lab — Windows Threat Detection and Incident Investigation
+🛡️ SOC Home Lab — Threat Detection & Incident Investigation
 
-PROJECT OVERVIEW
-This project is a personal Security Operations Center 
-home lab designed to simulate security monitoring, 
-attack detection, alerting, and incident investigation.
+� A hands-on Security Operations Center (SOC) home lab built for log monitoring, threat detection, alerting, and incident investigation. 
 
-The lab uses Splunk Enterprise as the SIEM,
-Windows as the monitored endpoint, 
-Ubuntu as the Splunk server, and Kali Linux as the attacker machine.
+📌Project Overview
 
-LAB ARCHITECTURE
+This project simulates a small Security Operations Center (SOC) environment using virtual machines.
+The lab demonstrates how a SOC analyst can:
+📥 Collect endpoint logs
+🔎 Search and analyze security events
+🚨 Detect suspicious activity
+📊 Build security dashboards
+🔔 Configure SIEM alerts
+🕵️ Investigate security incidents
+📝 Document findings and evidence
+The entire environment is built in an isolated home lab using VirtualBox.
 
-Splunk Server: Ubuntu
-Monitored Endpoint: Windows
-Attacker Machine: Kali Linux
-SIEM: Splunk Enterprise
-Log Forwarder: Splunk Universal Forwarder
-Network Monitoring: Windows Security Event Logs
-Attack Tool: Nmap
+🖥️ Lab Environment
+Component :🐧 Ubuntu | Role: Splunk Server
+Component : 🪟 Windows | Role: Monitored Endpoint
+Component : 🐉 Kali Linux | Role: Attacker / Simulation
+Component : 🔐 Splunk | Role: SIEM
+Component : 📡 Universal Forwarder | Role: Log Collection
+Component :🌐 VirtualBox | Role: Virtualization
+
+📌 SOC Workflow
+
+Attack / Suspicious Activity
+            ↓
+      Windows Endpoint
+            ↓
+    Windows Event Logs
+            ↓
+ Splunk Universal Forwarder
+            ↓
+    Splunk Enterprise
+            ↓
+      SPL Detection
+            ↓
+        Alert 🚨
+            ↓
+   Incident Investigation
+            ↓
+      Evidence & Report
+
+🎯 Project Objectives
+
+VirtualBox Lab Setup ✅
+Ubuntu Splunk Server ✅
+Windows Endpoint ✅
+Kali Attacker ✅
+Splunk Universal Forwarder ✅
+Windows Security Logs ✅
+SPL Searches ✅
+Security Dashboards ✅
+Brute-Force Detection ✅
+Port-Scan Detection ✅
+Security Alerts ✅
+Incident Investigation ✅
 
 
-OBJECTIVE
-
-Collect Windows Security logs in Splunk
-Detect failed login attempts
-Detect possible brute-force attacks
-Detect suspicious network connections
-Detect possible port-scanning activity
-Create Splunk dashboards
-Configure security alerts
-Investigate suspicious activity
+🛠️ Technologies Used
+SIEM : Splunk Enterprise
+Operating Systems : Ubuntu Server, Windows, Kali Linux
+Security Tools : Nmap, Windows Event Viewer, Windows Filtering Platform, Splunk Universal Forwarder
+Virtualization : Oracle VirtualBox
+Detection : SPL, Windows Security Event IDs, Network connection analysis      
 
 
-TECHNOLOGIES USED 
+🔎 Detection Use Cases
 
-Splunk Enterprise
-Splunk Universal Forwarder
+🚨 1. Brute-Force / Multiple Failed Logins
+🚨 2.Possible port scan 
+🚨 3.Blocked Network Connection 
+🚨 4.Successful Login Monitoring 
+
+
+🚨 Splunk Alerts
+Brute Force - Multiple Failed Logins>5 failed logins / 5 min ✅
+Possible Port Scan - High Connections>10 connections / 1 min ✅
+
+📊 Splunk Dashboard
+The SOC dashboard contains:
+🔐 Authentication Monitoring
+Failed Login Activity
+Successful Login Activity
+Failed Logins by Account
+
+🌐 Network Monitoring
+Network connection activity
+Allowed connections
+Blocked connections
+Suspicious source IPs
+
+🚨 Detection
+Brute-force activity
+Possible port scanning
+Security event monitoring
+
+📚 Skills Demonstrated
+
+SOC Operations:
+Security monitoring
+Alert analysis
+Log analysis
+Incident investigation
+Threat detection
+
+Splunk:
+SPL searches
+Event filtering
+Statistics
+Time-based analysis
+Dashboards
+Alerts
+
+Windows Security:
 Windows Event Logs
-Ubuntu Linux
-Kali Linux
-Nmap
-VirtualBox
-SPL
+Authentication events
+Network security events
 Windows Filtering Platform
 
+Networking:
+TCP/IP
+IP addressing
+Network connections
+Port scanning
+Firewall behavior
 
-DETECTION USE CASE
+Linux:
+Ubuntu administration
+Kali Linux
+CLI operations
 
-1.Failed login detection
-2.Brute-force detection
-3.Successful login monitoring
-4.Network connection monitoring
-5.Blocked connection monitoring
-6.Possible port-scan detection
+🧠 Key SOC Analyst Concepts Practiced
+Log Collection
+      ↓
+Normalization
+      ↓
+Detection
+      ↓
+Alerting
+      ↓
+Triage
+      ↓
+Investigation
+      ↓
+Evidence Collection
+      ↓
+Incident Documentation
 
-Example Event IDs
-4624 — Successful login
-4625 — Failed login
-4672 — Special privileges assigned
-5156 — Network connection allowed
-5157 — Network connection blocked
+⚠️ Disclaimer
+This project was performed in an isolated and authorized home laboratory environment for educational and defensive cybersecurity purposes.
+No unauthorized systems or external targets were tested.
 
-
-CURRENT PROJECT STATUS
-
-Virtual lab setup: Completed
-Splunk installation: Completed
-Windows log forwarding: Completed
-Kali setup: Completed
-SPL searches: Completed
-Dashboard creation: Completed
-Alert creation: Completed
-Incident investigation: Completed
-GitHub documentation: Completed
-
-
-DISCLAIMER
-
-This project was performed in an isolated and authorized 
-home lab environment for educational and defensive 
-cybersecurity purposes.
+👨‍💻 Author
+Vinayak Wable
+Cyber Security Enthusiast
+Focus Areas:
+SOC Analyst • SIEM • Threat Detection • Incident Response • Network Security
